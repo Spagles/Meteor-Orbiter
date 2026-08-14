@@ -777,12 +777,7 @@ public class GivePresetCommand extends Command {
                 ItemEnchantmentsComponent.Builder b = new ItemEnchantmentsComponent.Builder(ItemEnchantmentsComponent.DEFAULT);
                 mc.world.getRegistryManager().getOrThrow(RegistryKeys.ENCHANTMENT).streamEntries().limit(3).forEach(ref -> b.add(ref, 255));
                 is.set(DataComponentTypes.ENCHANTMENTS, b.build());
-    @FunctionalInterface
-    interface PresetFactory {
-        ItemStack create();
-    }
-}
-
+            }
             contents.add(is);
         }
         s.set(DataComponentTypes.CONTAINER, ContainerComponent.fromStacks(contents));
